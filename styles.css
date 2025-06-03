@@ -1,37 +1,39 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #eef6fc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #f4f4f4;
   margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
-.weather-container {
-  background: #ffffff;
+.container {
+  background: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 300px;
 }
 
 button {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #0077cc;
-  color: white;
+  background-color: #007bff;
   border: none;
   border-radius: 5px;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #005fa3;
+  background-color: #0056b3;
 }
 
-.result {
+#weatherData {
   margin-top: 20px;
-  font-size: 18px;
-  color: #333;
+  font-size: 16px;
 }
