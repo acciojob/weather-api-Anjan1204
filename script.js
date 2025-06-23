@@ -1,20 +1,15 @@
-function getWeather() {
-  const url = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=cloud_cover";
+document.getElementById("getWeatherBtn").addEventListener("click", () => {
+  const API_KEY = "e467712b257e418838be97cc881a71de"; // Match the test case
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${API_KEY}`;
 
   fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Network error");
-      }
-      return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-      const cloudCover = data.current.cloud_cover;
-      document.getElementById("weatherData").textContent =
-        `Current weather in Berlin: Cloud Cover - ${cloudCover}%`;
+      const weatherMain = data.weather[0].main;
+      document.getElementById("weatherData").textContent = `Current weather in London: ${weatherMain}`;
     })
     .catch(error => {
-      console.error("Fetch error:", error);
-      document.getElementById("weatherData").textContent = "Unable to fetch weather data.";
+      console.error("Error fetching weather:", error);
+      document.getElementById("weatherData").textContent = "Failed to fetch weather.";
     });
-}
+});
